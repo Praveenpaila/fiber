@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../utils/apiClient';
 import { HelpCircle, Check, X, RotateCcw } from 'lucide-react';
 
 const fallbackQuiz = [
@@ -71,7 +71,7 @@ export function QuizSection() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    axios.get('/api/quiz')
+    api.get('/api/quiz')
       .then(res => {
         if (res.data?.success && res.data.data?.length > 0) {
           setQuestions(res.data.data);

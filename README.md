@@ -95,29 +95,43 @@ The test suite verifies:
 - Strict input validation rejecting zero or negative values.
 - Theoretical percentage error estimation.
 
-## 8. Production Deployment Guide
+## 8. Production Deployment Guide: Vercel + Render
 
-### Option A: Deployment on Render or Railway
+### Step 1: Deploy Backend API on Render (Free Web Service)
 
-#### Backend Deployment (Web Service):
-1. Create a new Web Service pointing to the repository.
-2. Set Root Directory to `server`.
-3. Set Build Command to `npm install`.
-4. Set Start Command to `npm start`.
-5. Set Environment Variables:
-   - `PORT`: `5000` (or host provided port)
+1. Sign in to [Render](https://render.com) using your GitHub account.
+2. Click **New +** and select **Web Service**.
+3. Connect your repository: `Praveenpaila/fiber`.
+4. Configure the Web Service settings:
+   - **Name**: `fiberlab-api`
+   - **Root Directory**: `server`
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Instance Type**: `Free`
+5. Under **Environment Variables**, add:
    - `NODE_ENV`: `production`
-   - `MONGODB_URI`: Your MongoDB Atlas connection URI string
-   - `CLIENT_ORIGIN`: `https://fiberlab.physics.edu` (your frontend production domain)
+   - `PORT`: `5000`
+   - `MONGODB_URI`: Your MongoDB Atlas connection URI string (e.g. `mongodb+srv://<user>:<password>@cluster0.mongodb.net/fiberlab?retryWrites=true&w=majority`)
+   - `CLIENT_ORIGIN`: Your Vercel frontend URL (e.g. `https://fiberlab.vercel.app`)
+6. Click **Create Web Service**. Once deployed, copy your Render API URL (e.g. `https://fiberlab-api.onrender.com`).
 
-#### Frontend Deployment (Static Site):
-1. Create a new Static Site on Render, Cloudflare Pages, or Vercel.
-2. Set Root Directory to `client`.
-3. Set Build Command to `npm run build`.
-4. Set Output Directory to `dist`.
-5. Add Single Page Application rewrite rule: rewrite all requests `/*` to `/index.html`.
+### Step 2: Deploy Frontend on Vercel (Global Edge Network)
 
-### Option B: Unified Production Server on a Linux VPS (Ubuntu / Debian)
+1. Sign in to [Vercel](https://vercel.com) using your GitHub account.
+2. Click **Add New...** and select **Project**.
+3. Import your repository: `Praveenpaila/fiber`.
+4. Configure Project Settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: Click Edit and select `client`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Under **Environment Variables**, add:
+   - `VITE_API_URL`: Your Render backend URL from Step 1 (e.g. `https://fiberlab-api.onrender.com`)
+6. Click **Deploy**. Vercel will build and launch your application at a permanent HTTPS address (e.g. `https://fiberlab.vercel.app`).
+7. Update `CLIENT_ORIGIN` on your Render Web Service to match your assigned Vercel URL.
+
+### Alternative Option: Unified Production Server on a Linux VPS (Ubuntu / Debian)
 
 1. Provision an Ubuntu LTS server and install Node.js, Nginx, and PM2:
 ```bash

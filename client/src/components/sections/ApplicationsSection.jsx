@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../utils/apiClient';
 import { Globe2 } from 'lucide-react';
 
 const fallbackApplications = [
@@ -75,7 +75,7 @@ export function ApplicationsSection() {
   const [apps, setApps] = useState(fallbackApplications);
 
   useEffect(() => {
-    axios.get('/api/applications')
+    api.get('/api/applications')
       .then(res => {
         if (res.data?.success && res.data.data?.length > 0) {
           // ensure imagePath points to .svg or .jpg properly

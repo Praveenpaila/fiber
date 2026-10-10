@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../utils/apiClient';
 import {
   ShieldAlert,
   Spline,
@@ -74,7 +74,7 @@ export function PrecautionsSection() {
   const [precautions, setPrecautions] = useState(fallbackPrecautions);
 
   useEffect(() => {
-    axios.get('/api/precautions')
+    api.get('/api/precautions')
       .then(res => {
         if (res.data?.success && res.data.data?.length > 0) {
           setPrecautions(res.data.data);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../utils/apiClient';
 import {
   Plus,
   Trash2,
@@ -128,7 +128,7 @@ export function ObservationSection({ onStatsCalculated }) {
     setSaveStatus({ state: 'loading', message: 'Saving observations to MongoDB...' });
 
     try {
-      const res = await axios.post('/api/observations', {
+      const res = await api.post('/api/observations', {
         studentName: studentName.trim(),
         rollNo: rollNo.trim(),
         readings: validReadings
@@ -156,7 +156,7 @@ export function ObservationSection({ onStatsCalculated }) {
 
     setSearchStatus({ state: 'loading', message: 'Querying records...' });
     try {
-      const res = await axios.get(`/api/observations?rollNo=${encodeURIComponent(roll)}`);
+      const res = await api.get(`/api/observations?rollNo=${encodeURIComponent(roll)}`);
       if (res.data?.success) {
         setSavedRecords(res.data.data);
         if (res.data.data.length === 0) {
@@ -173,7 +173,7 @@ export function ObservationSection({ onStatsCalculated }) {
   // Delete an observation record
   const handleDeleteRecord = async (recordId) => {
     try {
-      const res = await axios.delete(`/api/observations/${recordId}`);
+      const res = await api.delete(`/api/observations/${recordId}`);
       if (res.data?.success) {
         setSavedRecords(prev => prev.filter(r => r._id !== recordId));
         setSearchStatus({ state: 'success', message: 'Observation record deleted successfully.' });

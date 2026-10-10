@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../utils/apiClient';
 import { ApparatusViewer } from '../3d/ApparatusViewer';
 import {
   LaserSourceModel,
@@ -102,7 +102,7 @@ export function ApparatusSection() {
 
   useEffect(() => {
     // Attempt fetching live seeded apparatus data from backend
-    axios.get('/api/apparatus')
+    api.get('/api/apparatus')
       .then(res => {
         if (res.data?.success && res.data.data?.length > 0) {
           // Merge with cameras and local mappings

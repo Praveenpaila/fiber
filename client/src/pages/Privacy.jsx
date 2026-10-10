@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../utils/apiClient';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Shield, Trash2, CheckCircle2, AlertCircle } from 'lucide-react';
@@ -14,7 +14,7 @@ export function Privacy() {
 
     setPurgeStatus({ state: 'loading', message: 'Purging observation records...' });
     try {
-      const res = await axios.delete(`/api/observations/purge-by-roll/${encodeURIComponent(purgeRollNo.trim())}`);
+      const res = await api.delete(`/api/observations/purge-by-roll/${encodeURIComponent(purgeRollNo.trim())}`);
       if (res.data?.success) {
         setPurgeStatus({
           state: 'success',
