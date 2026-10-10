@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+      <rect width="600" height="400" fill="#0f172a"/>
+      <!-- Structural beam representation (concrete/steel bridge segment) -->
+      <rect x="40" y="160" width="520" height="80" rx="4" fill="#334155" stroke="#475569" stroke-width="2"/>
+      <line x1="40" y1="200" x2="560" y2="200" stroke="#0284c7" stroke-width="6"/>
+      <!-- FBG periodic grating pattern -->
+      <rect x="240" y="194" width="120" height="12" fill="#0369a1"/>
+      <line x1="260" y1="194" x2="260" y2="206" stroke="#ffffff" stroke-width="2"/>
+      <line x1="280" y1="194" x2="280" y2="206" stroke="#ffffff" stroke-width="2"/>
+      <line x1="300" y1="194" x2="300" y2="206" stroke="#ffffff" stroke-width="2"/>
+      <line x1="320" y1="194" x2="320" y2="206" stroke="#ffffff" stroke-width="2"/>
+      <line x1="340" y1="194" x2="340" y2="206" stroke="#ffffff" stroke-width="2"/>
+      <rect x="24" y="24" width="340" height="52" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <text x="36" y="46" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Structural Fiber Bragg Grating Sensor</text>
+      <text x="36" y="64" font-family="Inter, sans-serif" font-size="11" fill="#94a3b8">Strain and thermal monitoring in civil bridge infrastructure</text>
+    </svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+      <rect width="600" height="400" fill="#1e293b"/>
+      <!-- Aircraft avionics harness representation -->
+      <path d="M 60 100 L 220 220 L 520 220" fill="none" stroke="#64748b" stroke-width="18" stroke-linecap="round"/>
+      <path d="M 60 100 L 220 220 L 520 220" fill="none" stroke="#f59e0b" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="520" cy="220" r="16" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+      <rect x="420" y="260" width="140" height="60" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+      <text x="490" y="295" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#38bdf8">EMI IMMUNE</text>
+      <rect x="24" y="24" width="340" height="52" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+      <text x="36" y="46" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Avionics Fly-by-Light Optical Bus</text>
+      <text x="36" y="64" font-family="Inter, sans-serif" font-size="11" fill="#94a3b8">Electromagnetically shielded aerospace flight control links</text>
+    </svg>

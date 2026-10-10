@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+      <rect width="600" height="400" fill="#1e293b"/>
+      <!-- Industrial DIN rail patch module -->
+      <rect x="120" y="80" width="360" height="240" rx="6" fill="#334155" stroke="#64748b" stroke-width="3"/>
+      <rect x="150" y="120" width="80" height="40" rx="4" fill="#0f172a" stroke="#94a3b8" stroke-width="2"/>
+      <rect x="260" y="120" width="80" height="40" rx="4" fill="#0f172a" stroke="#94a3b8" stroke-width="2"/>
+      <rect x="370" y="120" width="80" height="40" rx="4" fill="#0f172a" stroke="#94a3b8" stroke-width="2"/>
+      <!-- Fiber patch cords entering module -->
+      <path d="M 190 320 L 190 160" stroke="#f59e0b" stroke-width="8"/>
+      <path d="M 300 320 L 300 160" stroke="#0284c7" stroke-width="8"/>
+      <path d="M 410 320 L 410 160" stroke="#10b981" stroke-width="8"/>
+      <rect x="24" y="24" width="340" height="52" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+      <text x="36" y="46" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Industrial Automation Control Panel</text>
+      <text x="36" y="64" font-family="Inter, sans-serif" font-size="11" fill="#94a3b8">High noise immunity fiber buses for factory control cells</text>
+    </svg>

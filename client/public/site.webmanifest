@@ -1,0 +1,21 @@
+{
+  "name": "FiberLab: Numerical Aperture of an Optical Fiber",
+  "short_name": "FiberLab",
+  "description": "Virtual physics laboratory simulation for measuring the numerical aperture and acceptance angle of an optical fiber.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0369a1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Form and interactive controls */
+  input, select, textarea, button {
+    font-family: inherit;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #0369a1;
+    outline-offset: 2px;
+  }
+}
+
+/* Academic table styling */
+.lab-table th {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 2px solid #cbd5e1;
+  font-size: 0.875rem;
+}
+
+.lab-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.lab-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Card and container styles */
+.lab-card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.lab-btn-primary {
+  background-color: #0369a1;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lab-btn-primary:hover {
+  background-color: #0284c7;
+}
+
+.lab-btn-secondary {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 150ms ease, border-color 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lab-btn-secondary:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.lab-btn-danger {
+  background-color: #ffffff;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  transition: background-color 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lab-btn-danger:hover {
+  background-color: #fef2f2;
+}
